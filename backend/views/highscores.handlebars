@@ -1,0 +1,13 @@
+<div style="display: flex; justify-content: center">
+  <a href="http://localhost:5080/"><h1>Play again</h1></a>
+</div>
+{{#each highscores}}
+  <div
+    class="player-container"
+    style="display: flex; justify-content: space-evenly"
+  >
+    <h2>{{name}}</h2>
+    <h2>{{time}}</h2>
+    <h2>{{guesses}}</h2>
+  </div>
+{{/each}}
