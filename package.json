@@ -1,0 +1,29 @@
+{
+  "name": "wordle-2",
+  "version": "1.0.0",
+  "description": "A wordle-ish clone using React, ExpressJS and MongoDB",
+  "main": "backend/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CosmicJay2k/wordle-2.git"
+  },
+  "author": "John Tannenberg",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "express-handlebars": "^6.0.4",
+    "mongoose": "^6.2.10"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "bugs": {
+    "url": "https://github.com/CosmicJay2k/wordle-2/issues"
+  },
+  "homepage": "https://github.com/CosmicJay2k/wordle-2#readme"
+}
