@@ -15,7 +15,10 @@ export default function Feedback(props) {
       );
     });
 
-    if (word.filter((l) => l.props.result.includes("incorrect")).length > 0) {
+    if (
+      word.filter((l) => l.props.result.includes("incorrect")).length > 0 ||
+      word.filter((l) => l.props.result.includes("misplaced")).length > 0
+    ) {
       return word;
     } else {
       props.onEnd();
