@@ -24,6 +24,10 @@ app.get("/", (req, res) => {
   res.sendFile("/wordle-2/frontend/build/index.html", { root: "../" });
 });
 
+app.get("/info", (req, res) => {
+  res.sendFile("/backend/info.html", { root: "./" });
+});
+
 app.get("/api/random", (req, res) => {
   const letters = parseInt(req.query.letters);
   const answer = wordPicker(listOfWords, letters, req.query.unique);

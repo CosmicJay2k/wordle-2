@@ -84,6 +84,9 @@ function App() {
           </a>
         </div>
         <InputSetup onSetup={onSetup} />
+        <a href={"http://localhost:5080/info"}>
+          <h3>Project Information</h3>
+        </a>
       </div>
     );
   } else if (end === "running") {
@@ -106,6 +109,9 @@ function App() {
         <p>You guessed {guess.length} time(s)</p>
         <p>Enter your name to get on the Highscore list:</p>
         <InputHS onSubmit={onSubmit} />
+        <a href={"http://localhost:5080/info"}>
+          <h3>Project Information</h3>
+        </a>
       </div>
     );
   }
