@@ -10,6 +10,14 @@ export default function InputGuess(props) {
     setDisable(true);
   };
 
+  const onEnter = (keyCode) => {
+    if (keyCode === "Enter") {
+      setText("");
+      props.onGuess(text.toUpperCase());
+      setDisable(true);
+    }
+  };
+
   const onTextChange = (e) => {
     setText(e.target.value);
     if (props.answer.length === e.target.value.length) {
@@ -27,6 +35,7 @@ export default function InputGuess(props) {
         maxLength={props.answer.length}
         value={text}
         onChange={onTextChange}
+        onKeyUp={(e) => onEnter(e.code)}
       />
       <button disabled={disable} onClick={onClickGuess}>
         Guess
