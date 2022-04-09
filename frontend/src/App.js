@@ -94,10 +94,10 @@ function App() {
     return (
       <div className="App">
         <h1>WORDLE 2: ELECTRIC BOOGALOO </h1>
-        <InputGuess onGuess={onGuess} answer={answer} />
         <div className="guessContainer">
           <Feedback guess={guess.slice(-1)} answer={answer} onEnd={onEnd} />
         </div>
+        <InputGuess onGuess={onGuess} answer={answer} />
       </div>
     );
   } else if (end === "end") {

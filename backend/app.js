@@ -1,6 +1,7 @@
 import express from "express";
 import { wordPicker } from "./picker.js";
 import { listOfWords } from "./list.js";
+import words from "./words.js";
 import { dbPost, dbGet, dbConnect } from "./mongoose.js";
 import { engine } from "express-handlebars";
 
@@ -29,7 +30,7 @@ app.get("/info", (req, res) => {
 
 app.get("/api/random", (req, res) => {
   const letters = parseInt(req.query.letters);
-  const answer = wordPicker(listOfWords, letters, req.query.unique);
+  const answer = wordPicker(words, letters, req.query.unique);
   res.send(answer);
 });
 
