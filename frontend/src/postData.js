@@ -7,6 +7,5 @@ export default async function postData(url = "", data = {}) {
     },
     body: JSON.stringify(data), // body data type must match "Content-Type" header
   });
-  console.log("postData run");
   return response;
 }

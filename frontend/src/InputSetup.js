@@ -12,14 +12,13 @@ export default function InputSetup(props) {
     setConfig((prevState) => ({ ...prevState, [name]: valueAsNumber }));
   };
 
-  const handleCBChange = (e) => {
+  const handleCbChange = (e) => {
     if (e.target.checked) {
       setConfig((prevState) => ({ ...prevState, unique: true }));
     } else {
       setConfig((prevState) => ({ ...prevState, unique: false }));
     }
   };
-  console.log(config);
 
   return (
     <>
@@ -29,13 +28,13 @@ export default function InputSetup(props) {
         id="letters"
         name="letters"
         min="5"
-        max="7"
+        max="10"
         value={config.letters}
         onChange={handleChange}
       />
 
       <label htmlFor="unique">Unique letters: </label>
-      <input type="checkbox" id="unique" onChange={handleCBChange} />
+      <input type="checkbox" id="unique" onChange={handleCbChange} />
 
       <button onClick={onClickPlay}>Play!</button>
     </>

@@ -14,7 +14,6 @@ app.engine(
     },
   })
 );
-
 app.set("view engine", "handlebars");
 app.set("views", "./backend/views");
 
@@ -35,8 +34,6 @@ app.get("/api/random", (req, res) => {
 });
 
 app.post("/api/highscore", (req, res) => {
-  console.log("post recieved");
-  console.log(req.body);
   dbPost(req.body);
   res.end();
 });
