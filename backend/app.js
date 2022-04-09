@@ -1,7 +1,7 @@
 import express from "express";
 import { wordPicker } from "./picker.js";
 import { listOfWords } from "./list.js";
-import { dbPost, dbGet } from "./mongoose.js";
+import { dbPost, dbGet, dbConnect } from "./mongoose.js";
 import { engine } from "express-handlebars";
 
 const app = express();
@@ -33,14 +33,24 @@ app.get("/api/random", (req, res) => {
   res.send(answer);
 });
 
-app.post("/api/highscore", (req, res) => {
-  dbPost(req.body);
-  res.end();
+app.post("/api/highscore", async (req, res) => {
+  const db = await dbConnect();
+  const post = await dbPost(req.body);
+  if (db !== "success" || post === "error") {
+    res.render("mongo404");
+  } else {
+    res.end();
+  }
 });
 
 app.get("/highscores", async (req, res) => {
+  const db = await dbConnect();
   const highscores = await dbGet();
-  res.render("highscores", { highscores });
+  if (db !== "success" || highscores === "error") {
+    res.render("mongo404");
+  } else {
+    res.render("highscores", { highscores });
+  }
 });
 
 app.use("/static", express.static("../wordle-2/frontend/build/static"));

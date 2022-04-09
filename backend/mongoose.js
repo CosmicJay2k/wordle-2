@@ -8,20 +8,45 @@ const Player = mongoose.model("Player", {
   unique: String,
 });
 
-mongoose.connect("mongodb://localhost:27017/highscores");
+const options = {
+  serverSelectionTimeoutMS: 5000,
+};
+export async function dbConnect() {
+  try {
+    await mongoose.connect("mongodb://localhost:27017/highscores", options);
+    return "success";
+  } catch (error) {
+    console.log(error);
+    console.log("Initial connection failure. Make sure mongoDB is running.");
+  }
+}
 
-export function dbPost(data) {
-  const winner = new Player({
-    name: data.player,
-    time: data.time,
-    guesses: data.guesses,
-    letters: data.letters,
-    unique: data.unique,
-  });
-  winner.save();
+export async function dbPost(data) {
+  try {
+    const winner = new Player({
+      name: data.player,
+      time: data.time,
+      guesses: data.guesses,
+      letters: data.letters,
+      unique: data.unique,
+    });
+    await winner.save();
+  } catch (error) {
+    console.log(error);
+    console.log(
+      "Inside dbPost. Can't connect to mongoDB, se above for details"
+    );
+    return "error";
+  }
 }
 
 export async function dbGet() {
-  const highscores = await Player.find().lean();
-  return highscores;
+  try {
+    const highscores = await Player.find().lean();
+    return highscores;
+  } catch (error) {
+    console.log(error);
+    console.log("Inside dbGet. Can't connect to mongoDB, se above for details");
+    return "error";
+  }
 }
