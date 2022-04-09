@@ -18,7 +18,7 @@ export function dbPost(data) {
     letters: data.letters,
     unique: data.unique,
   });
-  winner.save().then(() => console.log("highscore saved"));
+  winner.save();
 }
 
 export async function dbGet() {
