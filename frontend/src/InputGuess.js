@@ -6,7 +6,7 @@ export default function InputGuess(props) {
 
   const onClickGuess = () => {
     setText("");
-    props.onGuess(text);
+    props.onGuess(text.toUpperCase());
     setDisable(true);
   };
 

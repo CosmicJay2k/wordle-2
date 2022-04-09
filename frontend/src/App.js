@@ -29,7 +29,7 @@ function App() {
       `http://localhost:5080/api/random?letters=${config.letters}&unique=${config.unique}`
     );
     const data = await response.text();
-    setAnswer(data);
+    setAnswer(data.toUpperCase());
   }
 
   const onSetup = (config) => {
