@@ -14,7 +14,13 @@ export default function InputHS(props) {
 
   return (
     <>
-      <input type="text" id="inputName" value={text} onChange={onTextChange} />
+      <input
+        type="text"
+        id="inputName"
+        value={text}
+        onChange={onTextChange}
+        placeholder="Enter your name"
+      />
       <a href="http://localhost:5080/highscores">
         <button onClick={onClickSubmit}>Submit</button>
       </a>

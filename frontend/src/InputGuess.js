@@ -36,6 +36,7 @@ export default function InputGuess(props) {
         value={text}
         onChange={onTextChange}
         onKeyUp={(e) => onEnter(e.code)}
+        placeholder={`Write your ${props.answer.length}-letter guess`}
       />
       <button disabled={disable} onClick={onClickGuess}>
         Guess
