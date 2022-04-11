@@ -7,14 +7,7 @@ import { engine } from "express-handlebars";
 
 const app = express();
 
-app.engine(
-  "handlebars",
-  engine({
-    helpers: {
-      markdown: (md) => marked(md),
-    },
-  })
-);
+app.engine("handlebars", engine());
 app.set("view engine", "handlebars");
 app.set("views", "./backend/views");
 
