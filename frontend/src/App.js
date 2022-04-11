@@ -98,6 +98,14 @@ function App() {
           <Feedback guess={guess.slice(-1)} answer={answer} onEnd={onEnd} />
         </div>
         <InputGuess onGuess={onGuess} answer={answer} />
+        <h2>Previous guesses:</h2>
+        <div>
+          <ul style={{ padding: 0 }}>
+            {guess.map((g) => (
+              <li style={{ listStyleType: "none" }}>{g.word}</li>
+            ))}
+          </ul>
+        </div>
       </div>
     );
   } else if (end === "end") {
