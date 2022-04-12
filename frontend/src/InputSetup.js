@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-export default function InputSetup(props) {
+export default function InputSetup({ onSetup }) {
   const [config, setConfig] = useState({ letters: 5, unique: false });
 
   const onClickPlay = () => {
-    props.onSetup(config);
+    onSetup(config);
   };
 
   const handleChange = (e) => {

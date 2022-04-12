@@ -1,28 +1,28 @@
 import { useState } from "react";
 
-export default function InputGuess(props) {
+export default function InputGuess({ answer, onGuess }) {
   const [text, setText] = useState("");
   const [disable, setDisable] = useState(true);
 
   const onClickGuess = () => {
     setText("");
-    props.onGuess(text.toUpperCase());
+    onGuess(text.toUpperCase());
     setDisable(true);
   };
 
   const onEnter = (keyCode) => {
     if (keyCode === "Enter") {
       setText("");
-      props.onGuess(text.toUpperCase());
+      onGuess(text.toUpperCase());
       setDisable(true);
     }
   };
 
   const onTextChange = (e) => {
     setText(e.target.value);
-    if (props.answer.length === e.target.value.length) {
+    if (answer.length === e.target.value.length) {
       setDisable(false);
-    } else if (props.answer.length !== e.target.value.length) {
+    } else if (answer.length !== e.target.value.length) {
       setDisable(true);
     }
   };
@@ -32,11 +32,11 @@ export default function InputGuess(props) {
       <input
         type="text"
         id="inputGuess"
-        maxLength={props.answer.length}
+        maxLength={answer.length}
         value={text}
         onChange={onTextChange}
         onKeyUp={(e) => onEnter(e.code)}
-        placeholder={`Write your ${props.answer.length}-letter guess`}
+        placeholder={`Write your ${answer.length}-letter guess`}
       />
       <button disabled={disable} onClick={onClickGuess}>
         Guess

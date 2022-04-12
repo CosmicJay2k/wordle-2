@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-export default function InputHS(props) {
+export default function InputHS({ onSubmit }) {
   const [text, setText] = useState("");
 
   const onClickSubmit = () => {
     setText("");
-    props.onSubmit(text);
+    onSubmit(text);
   };
 
   const onTextChange = (e) => {
