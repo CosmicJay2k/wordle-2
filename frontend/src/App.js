@@ -1,10 +1,10 @@
 import "./App.css";
 import { useState } from "react";
-import Feedback from "./Feedback";
-import InputGuess from "./InputGuess";
-import InputHS from "./InputHS";
-import postData from "./postData";
-import InputSetup from "./InputSetup";
+import Feedback from "./components/Feedback";
+import InputGuess from "./components/InputGuess";
+import InputHS from "./components/InputHS";
+import postData from "./modules/postData";
+import InputSetup from "./components/InputSetup";
 
 function App() {
   const [setup, setSetup] = useState([]);

@@ -1,4 +1,4 @@
-import feedback from "./wordle";
+import feedback from "../modules/wordle";
 import Result from "./Result";
 import { v4 as uuidv4 } from "uuid";
 
