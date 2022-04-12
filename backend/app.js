@@ -1,8 +1,7 @@
 import express from "express";
-import { wordPicker } from "./picker.js";
-import { listOfWords } from "./list.js";
-import words from "./words.js";
-import { dbPost, dbGet, dbConnect } from "./mongoose.js";
+import { wordPicker } from "./modules/picker.js";
+import words from "./resources/words.js";
+import { dbPost, dbGet, dbConnect } from "./mongoose/mongoose.js";
 import { engine } from "express-handlebars";
 
 const app = express();
@@ -18,7 +17,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/info", (req, res) => {
-  res.sendFile("/backend/info.html", { root: "./" });
+  res.sendFile("/backend/resources/info.html", { root: "./" });
 });
 
 app.get("/api/random", (req, res) => {
