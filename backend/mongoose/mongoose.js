@@ -43,7 +43,8 @@ export async function dbPost(data) {
 export async function dbGet() {
   try {
     const highscores = await Player.find().lean();
-    return highscores;
+    let sortedHS = highscores.sort((a, b) => a.time - b.time);
+    return sortedHS;
   } catch (error) {
     console.log(error);
     console.log("Inside dbGet. Can't connect to mongoDB, se above for details");
