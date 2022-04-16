@@ -74,7 +74,7 @@ function App() {
         </a>
       </div>
     );
-  } else if (answer === "errorNoMatch") {
+  } else if (answer === "ERRORNOMATCH") {
     return (
       <div className="App">
         <h1>WORDLE 2: ELECTRIC BOOGALOO </h1>
