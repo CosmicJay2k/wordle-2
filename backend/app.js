@@ -4,8 +4,6 @@ import words from "./resources/words.js";
 import { dbPost, dbGet, dbConnect } from "./mongoose/mongoose.js";
 import { engine } from "express-handlebars";
 
-import { listOfWords } from "./resources/list.js";
-
 const app = express();
 
 app.engine("handlebars", engine());
@@ -24,7 +22,7 @@ app.get("/info", (req, res) => {
 
 app.get("/api/random", (req, res) => {
   const letters = parseInt(req.query.letters);
-  const answer = wordPicker(listOfWords, letters, req.query.unique);
+  const answer = wordPicker(words, letters, req.query.unique);
   res.send(answer);
 });
 
