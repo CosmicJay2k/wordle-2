@@ -13,7 +13,7 @@ app.set("views", "./backend/views");
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.sendFile("/wordle-2/frontend/build/index.html", { root: "../" });
+  res.sendFile("/frontend/build/index.html", { root: "./" });
 });
 
 app.get("/info", (req, res) => {
