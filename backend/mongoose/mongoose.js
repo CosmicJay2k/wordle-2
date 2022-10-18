@@ -13,7 +13,7 @@ const options = {
 };
 export async function dbConnect() {
   try {
-    await mongoose.connect("mongodb://localhost:27017/highscores", options);
+    await mongoose.connect("mongodb://127.0.0.1:27017/highscores", options);
     return "success";
   } catch (error) {
     console.log(error);
