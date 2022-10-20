@@ -1,6 +1,6 @@
 # wordle-2
 
-## A wordle-ish clone made with JS, Express, Mongoose and MongoDB.
+## A wordle-ish clone made with React, Express, Mongoose and MongoDB.
 
 To run:\
 Have MongoDB running.\
