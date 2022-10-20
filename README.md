@@ -2,6 +2,8 @@
 
 ## A wordle-ish clone made with React, ExpressJS, Handlebars and MongoDB.
 
+//bugs in the algorithm
+
 To run:\
 Have MongoDB running.\
 Run "npm install", "npm start" in terminal.\
