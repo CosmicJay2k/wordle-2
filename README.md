@@ -4,5 +4,5 @@
 
 To run:\
 Have MongoDB running.\
-Run "npm start" in terminal.\
+Run "npm install", "npm start" in terminal.\
 Surf to "http://localhost:5080" in a browser.
